@@ -1,0 +1,6 @@
+nnoremap  :call SmoothScroll("d",2, 2)<CR>
+nnoremap  :call SmoothScroll("u",2, 2)<CR>
+nnoremap  :call SmoothScroll("d",1, 1)<CR>
+nnoremap  :call SmoothScroll("u",1, 1)<CR>
+
+let g:scroll_factor = 2000

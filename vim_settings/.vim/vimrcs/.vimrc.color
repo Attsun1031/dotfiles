@@ -1,0 +1,24 @@
+set t_Co=256    " allow 256 colors
+
+" syntax color for python (default schemet)
+"highlight Statement ctermfg=3
+"highlight pythonStatement ctermfg=3
+"highlight Conditional ctermfg=3
+"highlight pythonOperator ctermfg=3
+"highlight Repeat ctermfg=3
+"highlight String ctermfg=169
+colorscheme jellybeans
+
+" colors for vimdiff
+hi DiffAdd    ctermfg=black ctermbg=2
+hi DiffChange ctermfg=black ctermbg=3
+hi DiffDelete ctermfg=black ctermbg=6
+hi DiffText   ctermfg=black ctermbg=7
+
+hi SpecialKey ctermfg=darkgrey     " trail color
+
+highlight JpSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
+au BufRead,BufNew * match JpSpace /¡¡/
+highlight Tab ctermfg=Yellow
+match Tab /\t/
+

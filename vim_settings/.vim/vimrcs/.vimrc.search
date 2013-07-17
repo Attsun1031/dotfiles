@@ -1,0 +1,29 @@
+" open by find
+set path+=$HOME/src/trunk/**
+
+set tags+=~/.tags
+
+" quickfix
+autocmd QuickFixCmdPost *grep* cwindow
+nnoremap [q :cprevious<CR>
+nnoremap ]q :cnext<CR>
+nnoremap cq :ccl<CR>
+nnoremap [Q :<C-u>cfirst<CR>
+nnoremap ]Q :<C-u>clast<CR>
+
+" set external grep
+set grepprg=grep\ -nH
+noremap K :sil grep "\<<C-R><C-W>\>" 
+noremap rK :sil grep -r "\<<C-R><C-W>\>" --exclude="*/\.svn/*" --exclude="*/.svn-base*" --exclude="*.svn-base" --exclude="*.pyc" --exclude="*.tmp" --exclude="*.log" 
+noremap grK :sil grep -r <C-R><C-W> 
+
+" find
+noremap rF :find <C-R><C-W>
+
+" set replace shortcut
+nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
+
+command! Rd :redraw!
+" open tag under cursor in new tab
+" map <C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+

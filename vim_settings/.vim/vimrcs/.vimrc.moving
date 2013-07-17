@@ -1,0 +1,62 @@
+" key map
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
+" カーソルを表示行で移動
+nnoremap h <Left>
+nnoremap j gj
+nnoremap k gk
+nnoremap l <Right>
+nnoremap <Down> gj
+nnoremap <Up>   gk
+
+" 5 行ずつ移動
+nmap <C-j> 5j
+nmap <C-K> 5k
+vnoremap <C-j> 5j
+vnoremap <C-k> 5k
+
+" ウィンドウ切り替え
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+
+" insert modeで入力
+inoremap <C-e> <END>
+inoremap <C-a> <HOME>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
+" tab key map
+"nnoremap <S-Tab> gt
+"nnoremap <Tab><Tab> gT
+"for i in range(1, 9)
+"    execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
+"endfor
+
+" change buffer
+nnoremap ]b :bn<CR>
+nnoremap [b :bp<CR>
+for i in range(1, 9)
+    execute 'nnoremap ' . i . 'b :b ' . i . '<CR>'
+endfor
+
+" enable to change buffer before saving
+set hidden
+
+" バッファ削除
+nnoremap bq <ESC>:bnext \| bdelete #<CR>
+" カーソルを行頭、行末で止まらないようにする 
+set whichwrap=b,s,h,l,<,>,[,]
+
+" 矩形選択で自由に移動する
+set virtualedit+=block
+
+" insert mode でjjでesc
+inoremap jj <Esc>
+

@@ -1,0 +1,14 @@
+autocmd FileType python setl cinwords=if,elif,else,for,while,try,except,finally,def,class,with omnifunc=pythoncomplete#Complete
+autocmd BufNewFile *.py 0r $HOME/.vim/templates/python.txt
+autocmd BufNewFile,BufRead *.h,*m set filetype=objc
+autocmd BufNewFile,BufRead *.html set ft=xhtml
+autocmd BufNewFile,BufRead *.js set ft=javascript
+autocmd BufNewFile,BufRead *.css set ft=css
+
+" 指定文字コードで強制的にファイルを開く
+command! Cp932 edit ++enc=cp932
+command! Eucjp edit ++enc=euc-jp
+command! Iso2022jp edit ++enc=iso-2022-jp
+command! Utf8 edit ++enc=utf-8
+command! Jis Iso2022jp
+command! Sjis Cp932

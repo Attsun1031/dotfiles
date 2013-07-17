@@ -1,0 +1,5 @@
+let NERDTreeDirArrows = 0   " prevent mojibake
+let NERDTreeMinimalUI = 1   " hide help and bookmark
+
+nnoremap <silent> <leader>d :NERDTree<CR>
+let NERDTreeQuitOnOpen = 1

@@ -1,0 +1,13 @@
+let Tlist_Auto_Open = 1
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Enable_Fold_Column = 1
+let Tlist_Close_On_Select = 0
+let Tlist_Auto_Update = 1
+let Tlist_WinWidth = 30
+let Tlist_GainFocus_On_ToggleOpen = 0
+let Tlist_WinWidth = 40
+let Tlist_Inc_Winwidth = 1
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+
+nnoremap <silent> tl :Tlist<CR>

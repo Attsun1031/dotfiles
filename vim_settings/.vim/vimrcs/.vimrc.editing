@@ -1,0 +1,23 @@
+" insertモードを抜けるとIMEオフ
+set noimdisable
+set iminsert=0 imsearch=0
+set noimcmdline
+inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+
+" Insert mode中で単語単位/行単位の削除をアンドゥ可能にする
+inoremap <C-u>  <C-g>u<C-u>
+inoremap <C-w>  <C-g>u<C-w>
+
+" :Ptでインデントモード切替（貼り付け時にずれなくなる）
+command! Pt :set paste!
+
+" 自動補完系はわりとうざい
+" コンマの後に自動的にスペースを挿入
+" inoremap , ,<Space>
+
+" 括弧を自動補完
+"inoremap { {}<LEFT>
+"inoremap [ []<LEFT>
+"inoremap ( ()<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>

@@ -1,0 +1,2 @@
+" Yank¤ÎÍúÎò»²¾È
+nnoremap ,y :YRShow<CR>
