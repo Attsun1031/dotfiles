@@ -4,6 +4,7 @@ autocmd BufNewFile,BufRead *.h,*m set filetype=objc
 autocmd BufNewFile,BufRead *.html set ft=xhtml
 autocmd BufNewFile,BufRead *.js set ft=javascript
 autocmd BufNewFile,BufRead *.css set ft=css
+autocmd FileType markdown :set fileencoding=utf-8
 
 " 指定文字コードで強制的にファイルを開く
 command! Cp932 edit ++enc=cp932
