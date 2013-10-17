@@ -2,7 +2,15 @@
 
 VIMDIR=$HOME/.vim
 
-mkdir $WORKDIR
+if [ -d "$VIMDIR" ]
+then
+  mv $VIMDIR $HOME/vim.$DATETIME
+fi
+
+if [ -e "$HOME/.vimrc" ]
+then
+  mv $HOME/.vimrc $HOME/vimrc.$DATETIME
+fi
 
 cp -pr `pwd`/vim_settings/.vim $VIMDIR
 mkdir $VIMDIR/bundle
