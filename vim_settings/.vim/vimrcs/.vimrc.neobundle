@@ -14,7 +14,6 @@ NeoBundle "vim-scripts/YankRing.vim"
 NeoBundle "vim-scripts/pythoncomplete"
 NeoBundle "vim-scripts/taglist.vim"
 NeoBundle "Shougo/neocomplcache.vim"
-NeoBundle "banyan/recognize_charcode"
 NeoBundle "nanotech/jellybeans.vim"
 
 """ not support vim700
