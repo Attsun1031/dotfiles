@@ -1,2 +1,5 @@
-" Yank¤ÎÍúÎò»²¾È
+" show yank history
 nnoremap ,y :YRShow<CR>
+
+" history file prefix
+let g:yankring_history_file = ".yankring_history"
