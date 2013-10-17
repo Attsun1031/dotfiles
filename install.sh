@@ -13,6 +13,8 @@ then
   mv $HOME/.vimrc $HOME/vimrc.$DATETIME
 fi
 
+mkdir $HOME/.vimundo
+
 cp -pr `pwd`/vim_settings/.vim $VIMDIR
 mkdir $VIMDIR/bundle
 git clone https://github.com/Shougo/neobundle.vim $VIMDIR/bundle/neobundle.vim.git
