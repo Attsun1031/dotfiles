@@ -24,3 +24,13 @@ let g:pyindent_open_paren = '&sw'
 "inoremap ( ()<LEFT>
 "inoremap " ""<LEFT>
 "inoremap ' ''<LEFT>
+
+" persistent undo
+"if has('persistent_undo')
+"  set undodir=~/.vimundo
+"  augroup vimrc-undofile
+"    autocmd!
+"    autocmd BufReadPre ~/* setlocal undofile
+"  augroup END
+"endif
+
