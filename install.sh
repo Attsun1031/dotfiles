@@ -1,6 +1,5 @@
 #!/bin/bash
 
-WORKDIR=`pwd`/work
 VIMDIR=$HOME/.vim
 
 mkdir $WORKDIR
@@ -8,5 +7,3 @@ mkdir $WORKDIR
 cp -pr `pwd`/vim_settings/.vim $VIMDIR
 mkdir $VIMDIR/bundle
 git clone https://github.com/Shougo/neobundle.vim $VIMDIR/bundle/neobundle.vim.git
-
-rm -rf $WORKDIR
