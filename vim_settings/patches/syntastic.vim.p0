@@ -1,0 +1,37 @@
+*** /home/t-atsumi/.vim/bundle/syntastic/plugin/syntastic.vim   2013-10-17 12:39:15.381929012 +0900
+--- /home/t-atsumi/vim.bk/bundle/syntastic/plugin/syntastic.vim 2013-10-16 18:46:20.400955362 +0900
+***************
+*** 170,175 ****
+--- 170,178 ----
+      endif
+
+      call s:notifiers.refresh(loclist)
++
++     """ add by me """
++     call s:SynstasticEchoErrors()
+  endfunction
+
+  "clear the loc list for the buffer
+***************
+*** 465,467 ****
+--- 468,487 ----
+  endfunction
+
+  " vim: set et sts=4 sw=4:
++
++ """"" add by me """"""
++ " show loclist when error has detected (ignore warning).
++ function! s:SynstasticEchoErrors()
++     if g:syntastic_auto_loc_list != 1
++         let loclist = g:SyntasticLoclist.current()
++         if loclist.hasErrorsOrWarningsToDisplay()
++             let errors = loclist.errors()
++             let num_errors = len(errors)
++             if (num_errors > 0)
++                 call s:ShowLocList()
++             else
++                 lclose
++             endif
++         endif
++     endif
++ endfunction
