@@ -1,6 +1,7 @@
 #!/bin/bash
 
 VIMDIR=$HOME/.vim
+DATETIME=`date "+%Y%m%d%H%M%S"`
 
 if [ -d "$VIMDIR" ]
 then
