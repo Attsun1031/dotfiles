@@ -40,6 +40,9 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 " ユーザー定義スニペット保存ディレクトリ
 let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
 
+" オムニ補完時にプレビューを出さない
+" set completeopt-=preview
+
 "" スニペット
 "imap <C-y> <Plug>(neosnippet_expand_or_jump)
 "smap <C-k> <Plug>(neosnippet_expand_or_jump)
