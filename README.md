@@ -7,4 +7,4 @@
 3. ./install.sh
 4. vimを起動し、NeoBundleInstall（エラーが出るが無視）
 5. cd $HOME/.vim/bundle/syntastic/plugin
-6. patch < $HOME/dotfiles/vim_settings/patches/syntastic.vim.p0
+6. patch < dotfiles/vim_settings/patches/syntastic.vim.p0
