@@ -43,3 +43,5 @@ source ~/.vim/vimrcs/.vimrc.yankring
 " display
 source ~/.vim/vimrcs/.vimrc.display
 
+" encoding
+source ~/.vim/vimrcs/.vimrc.encoding
