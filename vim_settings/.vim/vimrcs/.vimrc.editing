@@ -1,36 +1,21 @@
-" insert�⡼�ɤ�ȴ������IME����
 set noimdisable
 set iminsert=0 imsearch=0
 set noimcmdline
 inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
-" Insert mode����ñ��ñ��/��ñ�̤κ����򥢥��ɥ���ǽ�ˤ���
 inoremap <C-u>  <C-g>u<C-u>
 inoremap <C-w>  <C-g>u<C-w>
 
-" :Pt�ǥ����ǥ��ȥ⡼�����ء�Ž���դ����ˤ����ʤ��ʤ���
 command! Pt :set paste!
 
 " python indent after paren
 let g:pyindent_open_paren = '&sw'
 
-" ��ư�䴰�ϤϤ����Ȥ�����
-" �����ޤθ��˼�ưŪ�˥��ڡ���������
-" inoremap , ,<Space>
-
-" ���̤���ư�䴰
-"inoremap { {}<LEFT>
-"inoremap [ []<LEFT>
-"inoremap ( ()<LEFT>
-"inoremap " ""<LEFT>
-"inoremap ' ''<LEFT>
-
 " persistent undo
-"if has('persistent_undo')
-"  set undodir=~/.vimundo
-"  augroup vimrc-undofile
-"    autocmd!
-"    autocmd BufReadPre ~/* setlocal undofile
-"  augroup END
-"endif
-
+if has('persistent_undo')
+  set undodir=~/.vimundo
+  augroup vimrc-undofile
+    autocmd!
+    autocmd BufReadPre ~/* setlocal undofile
+  augroup END
+endif
