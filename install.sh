@@ -22,3 +22,4 @@ git clone https://github.com/Shougo/neobundle.vim $VIMDIR/bundle/neobundle.vim.g
 
 # python
 cp -p python/.pythonrc.py $HOME/
+echo 'export PYTHONSTARTUP=$HOME/.pythonrc.py' >> $HOME/.bashrc
