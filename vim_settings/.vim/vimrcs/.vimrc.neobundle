@@ -8,8 +8,8 @@ endif
 
 NeoBundle "Align"
 NeoBundle "Shougo/unite.vim"
+NeoBundle "Shougo/neomru.vim"
 NeoBundle "vim-scripts/buftabs"
-NeoBundle "scrooloose/syntastic"
 NeoBundle "vim-scripts/YankRing.vim"
 NeoBundle "vim-scripts/pythoncomplete"
 NeoBundle "vim-scripts/taglist.vim"
