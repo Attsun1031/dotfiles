@@ -25,9 +25,6 @@ source ~/.vim/vimrcs/.vimrc.file
 " misc
 source ~/.vim/vimrcs/.vimrc.misc
 
-" syntastic
-source ~/.vim/vimrcs/.vimrc.syntastic
-
 " taglist
 source ~/.vim/vimrcs/.vimrc.taglist
 
