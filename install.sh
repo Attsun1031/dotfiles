@@ -20,6 +20,6 @@ mkdir $VIMDIR/bundle
 git clone https://github.com/Shougo/neobundle.vim $VIMDIR/bundle/neobundle.vim.git
 
 
-# python
-cp -p python/.pythonrc.py $HOME/
-echo 'export PYTHONSTARTUP=$HOME/.pythonrc.py' >> $HOME/.bashrc
+## python
+#cp -p python/.pythonrc.py $HOME/
+#echo 'export PYTHONSTARTUP=$HOME/.pythonrc.py' >> $HOME/.bashrc
