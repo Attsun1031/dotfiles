@@ -1,8 +1,15 @@
-# これはなに？
-.vimなど、よく使う環境設定ファイル
+# install zsh and others
+```
+brew install zsh
 
-# インストール手順
-1. git clone https://github.com/Attsun1031/dotfiles.git
-2. cd dotfiles
-3. ./install.sh
-4. vimを起動し、NeoBundleInstall（エラーが出るが無視）
+# install prezto
+# https://qiita.com/rspepe/items/9e30e698c4fc3e90891d
+# my recommended theme is "pure"
+
+# install zsh-completion
+# https://github.com/zsh-users/zsh-completions#manual-installation
+
+brew install ghq
+brew install peco
+brew install hub
+```
