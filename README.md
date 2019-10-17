@@ -17,6 +17,15 @@ brew install ghq
 brew install peco
 brew install hub
 
+# fonts
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+## iTerm2で以下設定
+## Preferences -> Profile -> Text -> Font で "Noto mono for powerline"に変更
+
 # after load .zshrc
 rm -f ~/.zcompdump; compinit
 ```
