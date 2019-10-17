@@ -50,7 +50,7 @@ source ~/.git-prompt.sh
 #GIT_PS1_SHOWUPSTREAM=1
 #GIT_PS1_SHOWUNTRACKEDFILES=1
 
-PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%F{4}${_prompt_sorin_pwd}%(!. %B%F{1}#%f%b.)${editor_info[keymap]}$(__git_ps1 " (%s)") '
+PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%F{4}${_prompt_sorin_pwd}$(__git_ps1 " (%s)")%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
 
 # z
 source `brew --prefix`/etc/profile.d/z.sh
