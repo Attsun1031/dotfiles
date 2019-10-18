@@ -1,4 +1,7 @@
-# install zsh and others
+# dotfiles
+dotfiles for me
+
+## install
 ```
 brew install zsh
 
@@ -29,3 +32,4 @@ rm -rf fonts
 # after load .zshrc
 rm -f ~/.zcompdump; compinit
 ```
+

@@ -50,7 +50,13 @@ source ~/.git-prompt.sh
 #GIT_PS1_SHOWUPSTREAM=1
 #GIT_PS1_SHOWUNTRACKEDFILES=1
 
-PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%F{6}[$(date "+%y/%m/%d %H:%M:%S")]%f %F{4}${_prompt_sorin_pwd}%f%F{2}$(__git_ps1 " (%s)")%f%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
+## customized sorin
+#PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%F{6}[$(date "+%y/%m/%d %H:%M:%S")]%f %F{4}${_prompt_sorin_pwd}%f%F{2}$(__git_ps1 " (%s)")%f%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
+## powerlevel10k
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+autoload -Uz promptinit
+promptinit
+prompt powerlevel10k
 
 # z
 source `brew --prefix`/etc/profile.d/z.sh
