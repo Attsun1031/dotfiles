@@ -87,6 +87,12 @@ nmap <C-k> 5k
 vnoremap <C-j> 5j
 vnoremap <C-k> 5k
 
+" change buffer↲
+nnoremap ]b :bn<CR>↲
+nnoremap [b :bp<CR>↲
+" close buffer
+nnoremap bq <ESC>:bnext \| bdelete #<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => autocmd
