@@ -19,6 +19,7 @@ brew install zsh-completions
 brew install ghq
 brew install peco
 brew install hub
+brew install z
 
 # fonts
 git clone https://github.com/powerline/fonts.git --depth=1
