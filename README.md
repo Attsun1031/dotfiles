@@ -20,6 +20,10 @@ brew install ghq
 brew install peco
 brew install hub
 
+# install dein.vim
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.cache/dein
+
 # fonts
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
