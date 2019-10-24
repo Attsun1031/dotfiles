@@ -41,6 +41,9 @@ fpath=(`brew --prefix`/Cellar/zsh-completions/0.31.0/share/zsh-completions $fpat
 fpath=(path/to/zsh-completions/src $fpath)
 autoload -U compinit
 compinit -u
+if type "kubectl" > /dev/null; then
+    source <(kubectl completion zsh)
+fi
 
 # git
 setopt PROMPT_SUBST
