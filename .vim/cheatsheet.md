@@ -2,8 +2,14 @@
 
 ## vim
 
-### nerdtree
+### NerdTree
 - `<C-e>` : NerdTreeを開く
+
+### Unite
+- `<Space>u` : タブと最近開いたファイル
+- `<Space>f` : カレントディレクトリ
+- `<Space>h` : ヤンク履歴
+- `<Space>t` : タブ
 
 ### move
 #### ノーマルモード
