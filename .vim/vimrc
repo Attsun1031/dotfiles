@@ -172,6 +172,7 @@ if dein#load_state('/Users/tatsuya.atsumi/.cache/dein')
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/neomru.vim')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('reireias/vim-cheatsheet')
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
 
@@ -236,3 +237,9 @@ let g:NERDTreeQuitOnOpen=1
 let NERDTreeDirArrows = 0
 "let NERDTreeMinimalUI = 1   " hide help and bookmark
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-cheatsheet 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:cheatsheet#cheat_file="~/.vim/cheatsheet.md"
+let g:cheatsheet#vsplit=1
