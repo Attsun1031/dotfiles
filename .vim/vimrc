@@ -46,6 +46,11 @@ set scrolloff=5
 " colorschema
 colorscheme darcula
 
+" persisten undo
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -225,8 +230,9 @@ endfunction"}}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => nerdtree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let NERDTreeDirArrows = 0   " prevent mojibake
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+let g:NERDTreeShowHidden=1
+let g:NERDTreeQuitOnOpen=1
+let NERDTreeDirArrows = 0
 "let NERDTreeMinimalUI = 1   " hide help and bookmark
 
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-"let NERDTreeQuitOnOpen = 1
