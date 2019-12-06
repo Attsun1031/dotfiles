@@ -7,6 +7,13 @@ fi
 alias ll="ls -Gl"
 alias la="ls -Gla"
 
+## colordiff
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
+
 # basic
 ## show exit value if not 0
 setopt print_exit_value
