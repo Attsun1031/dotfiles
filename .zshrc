@@ -60,6 +60,7 @@ source ~/.git-prompt.sh
 #GIT_PS1_SHOWUPSTREAM=1
 #GIT_PS1_SHOWUNTRACKEDFILES=1
 
+# prompt
 ## customized sorin
 #PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%F{6}[$(date "+%y/%m/%d %H:%M:%S")]%f %F{4}${_prompt_sorin_pwd}%f%F{2}$(__git_ps1 " (%s)")%f%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
 ## powerlevel10k
@@ -108,3 +109,47 @@ function peco-ghq
 zle -N peco-ghq
 bindkey '^g' peco-ghq
 
+# gcloud sdk
+## The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tatsuya.atsumi/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/tatsuya.atsumi/google-cloud-sdk/path.zsh.inc'; fi
+
+## The next line enables shell command completion for gcloud.
+if [ -f '/Users/tatsuya.atsumi/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/tatsuya.atsumi/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
+# paths
+## home bin
+export PATH="/Users/tatsuya.atsumi/bin:$PATH"
+
+## npm bin
+export PATH="/Users/tatsuya.atsumi/.nodenv/versions/8.11.3/bin:$PATH"
+
+## nuxt
+export PATH="/Users/tatsuya.atsumi/IdeaProjects/dalmatia/webapp-client-v2/node_modules/nuxt/bin:$PATH"
+
+## Setting PATH for Python 3.7
+## The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH
+
+## Setting user bin path
+export PATH="/Users/tatsuya.atsumi/bin":${PATH}
+
+## firebase-tools
+export PATH="/Users/tatsuya.atsumi/.nodenv/versions/10.11.0/lib/node_modules/firebase-tools/lib/bin":${PATH}
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# tmux setting
+function precmd() {
+  if [ ! -z $TMUX ]; then
+    tmux refresh-client -S
+  fi
+}
+
+# 初回シェル時のみ tmux実行
+if [ $SHLVL = 1 ]; then
+  tmux
+fi
