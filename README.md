@@ -20,6 +20,9 @@ brew install ghq
 brew install peco
 brew install hub
 brew install z
+brew install tmux
+brew install reattach-to-user-namespace
+brew install colordiff
 
 # install dein.vim
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
