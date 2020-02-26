@@ -35,7 +35,7 @@ fi
   typeset -ga POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
       # os_icon                 # os identifier
       dir                     # current directory
-      # vcs                     # git status
+      vcs                     # git status
       virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
       command_execution_time  # duration of the last command
   )
