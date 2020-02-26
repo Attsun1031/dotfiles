@@ -66,7 +66,7 @@ fi
       # ranger                  # ranger shell (https://github.com/ranger/ranger)
       # ram                   # free RAM
       # load                  # CPU load
-      # time                    # current time
+      time                    # current time
       # public_ip             # public IP address
       # proxy                 # system-wide http/https/ftp proxy
       # battery               # internal battery
@@ -174,12 +174,15 @@ fi
   typeset -g POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\uE0B2'
   # The right end of left prompt.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL='\uE0B0'
+  # typeset -g POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL='\u0024'
   # The left end of right prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL='\uE0B2'
+  # typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL='['
   # The left end of left prompt.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL=''
   # The right end of right prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
+  # typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL=']'
   # Left prompt terminator for lines without any segments.
   typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=
 

@@ -45,7 +45,6 @@ colors
 
 # completion
 fpath=(`brew --prefix`/Cellar/zsh-completions/0.31.0/share/zsh-completions $fpath)
-fpath=(path/to/zsh-completions/src $fpath)
 autoload -U compinit
 compinit -u
 if type "kubectl" > /dev/null; then
@@ -97,6 +96,7 @@ zle -N peco-z-search
 bindkey '^f' peco-z-search
 
 ## ghq
+export GHQ_ROOT="/Users/tatsuya.atsumi/repos"
 function peco-ghq
 {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
@@ -115,23 +115,19 @@ if [ -f '/Users/tatsuya.atsumi/google-cloud-sdk/path.zsh.inc' ]; then source '/U
 
 ## The next line enables shell command completion for gcloud.
 if [ -f '/Users/tatsuya.atsumi/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/tatsuya.atsumi/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
+#export PATH="$HOME/.nodenv/bin:$PATH"
+#eval "$(nodenv init -)"
 
 # paths
 ## home bin
 export PATH="/Users/tatsuya.atsumi/bin:$PATH"
 
-## npm bin
-export PATH="/Users/tatsuya.atsumi/.nodenv/versions/8.11.3/bin:$PATH"
-
-## nuxt
-export PATH="/Users/tatsuya.atsumi/IdeaProjects/dalmatia/webapp-client-v2/node_modules/nuxt/bin:$PATH"
-
 ## Setting PATH for Python 3.7
 ## The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-export PATH
+export PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+
+# pip --user directory
+export PATH="/Users/tatsuya.atsumi/Library/Python/3.7/bin:${PATH}"
 
 ## Setting user bin path
 export PATH="/Users/tatsuya.atsumi/bin":${PATH}
@@ -139,8 +135,14 @@ export PATH="/Users/tatsuya.atsumi/bin":${PATH}
 ## firebase-tools
 export PATH="/Users/tatsuya.atsumi/.nodenv/versions/10.11.0/lib/node_modules/firebase-tools/lib/bin":${PATH}
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+# pyenv path
+export PATH="/Users/tatsuya.atsumi/.pyenv/shims:${PATH}"
+
+# self install python
+export PATH="/Users/tatsuya.atsumi/Library/Python/3.7/bin:${PATH}"
+
+# istio
+export PATH=$PATH:$HOME/.istioctl/bin
 
 # tmux setting
 function precmd() {
@@ -153,3 +155,4 @@ function precmd() {
 if [ $SHLVL = 1 ]; then
   tmux
 fi
+
