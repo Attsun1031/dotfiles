@@ -3,9 +3,39 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+autoload -U select-word-style
+select-word-style bash
+
+# gnu commands
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
+
 # alias
-alias ll="ls -Gl"
-alias la="ls -Gla"
+alias ll='ls -l --color=auto'
+alias la="ls -la --color=auto"
+alias gi="git"
+alias gip="git pull"
+alias pc="pbcopy"
+#alias readlink=greadlink
+alias poetry="SYSTEM_VERSION_COMPAT=1 poetry"
+
+# GNU
+alias date='gdate'
+
+# gh alias
+alias ghv="gh repo view --web"
+alias ghp="gh pr create --web"
+alias ghrw="gh run watch -i1"
+alias ghrv="gh run view --web"
+
+# help
+autoload -U run-help
+autoload run-help-git
+autoload run-help-svn
+autoload run-help-svk
+unalias run-help
+alias help=run-help
 
 ## colordiff
 if [[ -x `which colordiff` ]]; then
@@ -22,8 +52,8 @@ setopt list_packed
 
 ## history
 export EDITOR='vim'
-export HISTSIZE=1000
-export SAVEHIST=100000
+export HISTSIZE=10000
+export SAVEHIST=1000000
 export HISTFILE=${HOME}/.zsh_history
 setopt hist_ignore_all_dups
 setopt EXTENDED_HISTORY
@@ -45,6 +75,7 @@ colors
 
 # completion
 fpath=(`brew --prefix`/Cellar/zsh-completions/0.31.0/share/zsh-completions $fpath)
+fpath=(~/.zsh/completion $fpath)
 autoload -U compinit
 compinit -u
 if type "kubectl" > /dev/null; then
@@ -74,7 +105,7 @@ source `brew --prefix`/etc/profile.d/z.sh
 # peco
 ## history
 function peco-history-selection() {
-    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    BUFFER=`history -n 1 | tac | awk '!a[$0]++' | peco`
     CURSOR=$#BUFFER
     zle reset-prompt
 }
@@ -138,6 +169,9 @@ export PATH="/Users/tatsuya.atsumi/.nodenv/versions/10.11.0/lib/node_modules/fir
 # pyenv path
 export PATH="/Users/tatsuya.atsumi/.pyenv/shims:${PATH}"
 
+# pipenv path
+export PATH="/usr/local/Cellar/pipenv/2018.11.26_4/bin:${PATH}"
+
 # self install python
 export PATH="/Users/tatsuya.atsumi/Library/Python/3.7/bin:${PATH}"
 
@@ -152,7 +186,36 @@ function precmd() {
 }
 
 # 初回シェル時のみ tmux実行
-if [ $SHLVL = 1 ]; then
-  tmux
-fi
+### if [ $SHLVL = 1 ]; then
+###   tmux
+### fi
+
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# dev-n
+export MY_DEV_N=atsumi
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"
+
+# iterm2
+source ~/.iterm2_shell_integration.zsh
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# go pkgs
+export PATH="${HOME}/go/bin:${PATH}"
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# gcloud command path
+export CLOUDSDK_PYTHON=/Users/tatsuya.atsumi/.pyenv/shims/python3.8
 
